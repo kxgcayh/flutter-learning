@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
+  final formKey = GlobalKey<FormBuilderState>().obs;
   final RxString choosenCategory = RxString('');
   final RxMap<dynamic, dynamic> submittedForm = {}.obs;
   final categories = [
@@ -13,9 +16,11 @@ class HomeController extends GetxController {
     ),
     CategoryModel(
       title: 'Category Pertama',
-      type: TypeCategory.date,
+      type: TypeCategory.text,
       forms: [
         FormModel(hintText: 'Isi dari Form 2'),
+        FormModel(hintText: 'Isi dari Form 3'),
+        FormModel(hintText: 'Isi dari Form 4'),
       ],
     ),
     CategoryModel(
@@ -34,7 +39,7 @@ class HomeController extends GetxController {
     ),
     CategoryModel(
       title: 'Category Keempat',
-      type: TypeCategory.date,
+      type: TypeCategory.text,
       forms: [
         FormModel(hintText: 'Isi dari Form pertama'),
       ],
